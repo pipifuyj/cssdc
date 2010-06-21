@@ -1,0 +1,217 @@
+BODY {
+	COLOR:#000; background-image:url(../images/hp_15.gif); font-family:Arial,simsun; font-size:12px; MARGIN-RIGHT:auto; MARGIN-LEFT:auto; margin-top:0; margin-bottom:0; text-align:center;
+}
+A:link {
+	FONT-SIZE: 12px; COLOR:#035b89; TEXT-DECORATION: none;
+}
+A:visited {
+	FONT-SIZE: 12px; COLOR:#035b89; TEXT-DECORATION: none;
+}
+A:hover {
+	TEXT-DECORATION: underline; COLOR:#035b89;
+}
+A:active {
+	COLOR: #035b89; TEXT-DECORATION: underline;
+}
+A.navbarlink {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #fff; TEXT-DECORATION: none; 
+}
+A.navbarlink:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #fff; TEXT-DECORATION: none;
+}
+A.navbarlink:hover {
+	FONT-WEIGHT: bold; TEXT-DECORATION: underline; COLOR: #fff;  FONT-SIZE: 12px;
+}
+A.navbarlink:active {
+	FONT-WEIGHT: bold; COLOR: #fff; TEXT-DECORATION: none; COLOR: #fff;FONT-SIZE: 12px;
+}
+A.boldnm {
+	FONT-SIZE: 12px; COLOR:#035b89; TEXT-DECORATION: none;font-weight:bold
+}
+A.boldnm:visited {
+	FONT-SIZE: 12px; COLOR:#035b89; TEXT-DECORATION: none;font-weight:bold
+}
+A.boldnm:hover {
+	TEXT-DECORATION: underline; COLOR:#035b89;  font-weight:bold
+}
+A.boldnm:active {
+	COLOR:#035b89; TEXT-DECORATION: underline; font-weight:bold
+}
+
+
+#all { width:100%; height:auto; text-align:center; background-image:url(../images/hp_02.gif); background-position:0 0; background-repeat:repeat-x}
+/*
+.maindv {clear:both;width:994px;height:1300px;background:#f6f6f6;margin:0 auto;}
+*/
+.maindv {clear:both;width:994px;background:#f6f6f6;margin:0 auto;}
+
+.tittle {width:994px; height:100px; float:left; clear:both}
+.navbar {width:994px; height:30px; text-align:center; height:30px; overflow:hidden; float:left; background-image:url(../images/hp_05.gif); color:#FFFFFF; vertical-align:middle;}
+.navbarft {width:994px; text-align:center; height:14px; float:left; background-image:url(../images/hp_05.gif); color:#FFFFFF; vertical-align:middle; padding-top:8px; height:22px!important;font-family:Arial,simsun;}
+
+/*
+.leftmenu {width:202px; height:1400px; float:left; background-color:#f6f6f6}
+.right {width:792px; height:1400px; float:right; background-color:#FFFFFF}
+*/
+.leftmenu {width:264px; float:left; background-color:#f6f6f6}
+.right {width:730px;  float:right; background-color:#FFFFFF}
+
+/*
+.user1 {width:202px; height:145px; float:left; background:#d6d8d8; clear:both}
+.user2 {width:202px; height:28px; float:left; text-align:center; padding-top:3px; height:31px!important;}
+.user3 {width:202px; height:28px; float:left; text-align:center;}
+*/
+.user1 {width:264px; height:145px; float:left; background:#d6d8d8; clear:both}
+.user1 img{width:264px;height:33px;}
+.user2 {width:264px; height:28px; float:left; text-align:center; padding-top:3px; height:31px!important;}
+.user3 {width:264px; height:28px; float:left; text-align:center;}
+
+/*
+.input1 {width:90px; height:16px; background:#FFFFFF; border:#333333 1px solid;}
+.line {width:180px; height:5px; float:left; background-image:url(../images/line.gif); background-repeat:repeat-x; margin-left:11px; display:inline; overflow:hidden}
+.user4 {width:202px; height:50px; float:left; text-align:center; line-height:16px}
+*/
+.input1 {width:120px; height:16px; background:#FFFFFF; border:#333333 1px solid;}
+.line {width:242px; height:5px; float:left; background-image:url(../images/line.gif); background-repeat:repeat-x; margin-left:11px; display:inline; overflow:hidden}
+.user4 {width:264px; height:50px; float:left; text-align:center; line-height:16px}
+
+/*
+.textr1 {width:202px; height:76px; float:left; background:#e5e6e6}
+.textr1a {width:202px; height:165px; float:left; background:#e5e6e6}
+.textr2 {width:202px; height:36px; float:left; text-align:center; padding-top:5px; height:41px!important;}
+.btn1 {height:20px; font-size:12px; font-family:Arial}
+.textr3 {width:202px; height:130px; float:left; text-align:center; vertical-align:text-top; padding-top:5px; height:135px!important;}
+.textr3a {width:170px; height:auto; float:left; text-align:left; vertical-align:text-top; padding-left:20px; width:182px!important;}
+*/
+
+.textr1 {width:264px; height:90px; float:left; background:#e5e6e6}
+.textr1 img{width:264px;height:33px;}
+.textr1a {width:264px; height:160px; float:left; background:#e5e6e6}
+.textr1a img{width:264px;height:33px;}
+.textr2 {width:264px; height:54px; text-align:center; padding-top:5px; height:59px!important;}
+.textr2 .input1{width:180px;margin:0px auto;margin-bottom:5px;}
+.textr3 {width:264px; height:125px; text-align:center; vertical-align:top; padding-top:5px; height:130px!important;}
+.textr3 input{width:150px;margin-left:40px;}
+.textr3 .btn1{margin-left:0;}
+/*
+.menu1 {width:202px; height:auto; float:left; background:#f6f6f6}
+.menu3 {width:194px; height:100px; overflow:auto; float:right; text-align:left; }
+.menu3a {width:194px; height:auto; float:right; text-align:left}
+*/
+.menu1 {width:264px;height:auto;float:left;background:#f6f6f6;text-align:left;}
+.menu1 img{width:264px;height:33px}
+.menu3 {width:256px;display:none;overflow:auto;text-align:left;}
+.menu3 .icon {width:16px;height:16px;}
+.submenu_menu3 .icon {width:16px;height:16px;}
+.menu3 .menu_add_btn{text-align:center;width:100%;margin:5px 0px;padding:0px;}
+.menu3a {width:256px; height:auto; float:right; text-align:left}
+.menu4 {width:202px; height:auto; float:left; background:#f6f6f6}
+.menu4 img{width:264px;height:33px}
+
+.submenu_menu1{width:244px;height:auto;background:#f6f6f6;text-align:left;margin:0 auto;}
+.submenu_menu1 img{width:244px;height:26px}
+.submenu_menu3{width:236px;display:none;overflow:auto;margin:0 auto;text-align:left; }
+.leftmenutext a,.leftmenutext a:visited{color: #000;}
+.leftmenutext a:hover{background-color:#555577;color: white;}
+
+.menu3a a,.menu3a a:visited{color: #000;}
+.menu3a a:hover{background-color:#555577;color: white;}
+
+.center {width:491px;  float:left; background:url(../images/centerbg.gif)}
+/*
+.rightbar {width:301px; height:auto; float:right;}
+*/
+.rightbar {width:239px; height:auto; float:left;}
+
+.mapbg { width:491px; height:350px; float:left; background-image:url(../images/mapbg.gif); background-repeat:no-repeat; background-position:center; text-align:center; overflow:hidden;}
+.map { width:462px; height:326px; float:left;}
+.maplft { width:14px; height:14px; float:left; clear:both; overflow:hidden}
+.maptp { width:460px; height:14px; height:14px; overflow:hidden; float:left; clear:both}
+.dotline { width:485px; height:8px; background-image:url(../images/hp_23.gif); background-repeat:repeat-x; background-position:0 0; overflow:hidden}
+.rc { width:441px; height:auto; padding-left:20px; width:461px!important; float:left}
+.rc1 {width:350px; height:24px; float:left; text-align:left}
+.rc2 {width:100px; height:24px; float:right; text-align:left}
+.subttl491 {width:441px; text-align:left; height:27px; line-height:27px; overflow:hidden; float:left; background-image:url(../images/hp_27.gif); background-position:center; background-repeat:repeat-x; color:#000000; vertical-align:middle; font-weight:bold; overflow:hidden}
+.subttl491a {width:50px; text-align:left; height:27px; overflow:hidden; float:right; background-image:url(../images/hp_27.gif); background-position:top; background-repeat:repeat-x; vertical-align:middle; overflow:hidden}
+
+
+.centerform1 {width:450px; height:auto; float:left; padding:10px; width:470px!important; text-align:left; font-weight:bolder}
+.centerform2 {width:451px; height:auto; padding:15px; padding-top:15px; padding-bottom:0px; width:491!important; float:left}
+.centerform {font:Arial; font-size:12px; color:#000000; height:18px; line-height:17px}
+.centerform3 {width:450px; height:16px; float:left; padding:10px; padding-right:20px width:470px!important; text-align:right}
+.centerline {width:475px; height:6px; background:url(../images/hp_35.gif); background-position:center; background-repeat:repeat-x; float:left; margin-left:7px; display:inline; overflow:hidden}
+
+/*
+.subttl2301 {width:301px; height:27px; text-align:left; line-height:27px; float:left; background-image:url(../images/hp_09.gif); background-position:center; background-repeat:repeat-x; color:#000000; vertical-align:middle; font-weight:bold; clear:both}
+.subttl2301a {width:300px; height:27px; text-align:left; line-height:27px; float:left; background-image:url(../images/hp_09.gif); background-position:center; background-repeat:repeat-x; color:#000000; vertical-align:middle; font-weight:bold; clear:both}
+*/
+.subttl2301 {width:239px; height:27px; text-align:left; line-height:27px; float:left; background-image:url(../images/hp_09.gif); background-position:center; background-repeat:repeat-x; color:#000000; vertical-align:middle; font-weight:bold; clear:both}
+.subttl2301a {width:238px; height:27px; text-align:left; line-height:27px; float:left; background-image:url(../images/hp_09.gif); background-position:center; background-repeat:repeat-x; color:#000000; vertical-align:middle; font-weight:bold; clear:both}
+
+.sobg {width:239px; height:325px; background-image:url(../images/picbg1.gif); background-position:0 0; background-repeat:no-repeat; clear:both}
+.gege1 {height:14px; width:150px; float:left; clear:both; overflow:hidden}
+.picall {width:224px; height:100px; float:left; padding-left:5px; width:230px!important;text-align:center;}
+/*
+.picleft {width:109px; height:100px; float:left}
+.picright {width:109px; height:100px; float:right}
+*/
+.pictxtall {width:224px; height:auto; float:left; padding-left:5px; width:230px!important;text-align:center;}
+/*
+.pictxtleft {width:109px; height:30px; float:left}
+.pictxtright {width:109px; height:30px; float:right}
+*/
+.gege2 {height:22px; width:150px; float:left; clear:both}
+#Results {height:auto;}
+#cprtdv { width:994px; height:70px; clear:both; margin:0 auto;}
+
+/*页面右侧图片*/
+.rightbar .imgcontainer{width:240px; height:auto; float:left; text-align:center; clear:both;}
+.rightbar .imgcontainer img{width:220px}
+
+/*ToolTip效果样式*/
+.tooltip {
+    position:absolute; 
+    width:350px; 
+    color:#000; 
+    visibility:hidden; 
+    text-align:left; 
+    vertical-align:top;
+    z-index:3;
+}
+
+.tooltip table {
+    background-color:#fff;
+    background-color:#fff; 
+    border:1px solid #666;
+    padding:0px;
+}
+
+.tooltipHeader {
+    border-bottom:1px solid #666;
+    background-image: url('../images/tooltip/tooltip-bg.gif');
+    background-repeat: repeat-x;
+    padding-left:3px;
+}
+.textleft{text-align:left;font-size:12px;}
+.textright{text-align:right;}
+.textcontent{font-size:12px;text-align:left;padding:5px;}
+
+.icon {
+    display:inline; vertical-align:middle; border:0px;
+}
+
+/*学科分类 鼠标滑过样式*/
+.imitateLinkHover{cursor:pointer;/*text-decoration: underline;*/ color:white; background-color:#555577;/*font-weight:bold;*/}
+
+/*页面按钮样式*/
+/*.btn1 {border:1px solid #333333; background:#efefef;height:20px; font-size:12px; font-family:Verdana,Arial}*/
+.btn1_mouseover {BORDER-RIGHT: #2C59AA 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #2C59AA 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 12px; FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#D7E7FA); BORDER-LEFT: #2C59AA 1px solid; CURSOR: hand; COLOR: black; PADDING-TOP: 2px; BORDER-BOTTOM: #2C59AA 1px solid;margin-bottom:5px}
+.btn1 {BORDER-RIGHT: #7b9ebd 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #7b9ebd 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 12px; FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#cecfde); BORDER-LEFT: #7b9ebd 1px solid; CURSOR: hand; COLOR: black; PADDING-TOP: 2px; BORDER-BOTTOM: #7b9ebd 1px solid;margin-bottom:5px}
+
+/*去掉地图版权声明*/
+#Map span{display: none;}
+
+.mapinfo{clear:both;text-align:left;float:left;display:inline;margin-top:5px;}
+.mapinfo Label{font-weight:bold;display:inline;}
+.mapimg{text-align:center;}
+.mapimg img{max-height:100px;}
