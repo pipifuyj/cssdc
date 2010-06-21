@@ -1,0 +1,75 @@
+<?php
+class DatasetController extends Controller{
+	public function Index(){
+		$this->areastore=$this->framework->getModel("Area")->store();
+		$PuredataStore=$this->framework->getModel("Puredata")->store();
+		$PuredatasetStore=$this->framework->getModel("Puredataset")->store();
+		$start=0;$limit=3;$sort="dataset_id";$dir="ASC";
+		$dataFilter=array();$dsFilter=array();
+		foreach($_REQUEST as $key=>$value){
+			if($key=="starttime")$dataFilter[]=array("starttime",">=",$value);
+			if($key=="endtime")$dataFilter[]=array("endtime","<=",$value);
+			if($key=="equip")$dsFilter[]=array("equip","=",$value);
+			if($key=="area"){
+				$child=$this->areastore->getChild($value);
+				foreach($child['name'] as $index=>$value){
+					if($index==0){
+						$PuredatasetStore->filterBy(array(array("area","=",$value)));
+					}else{
+						$PuredatasetStore->filterBy(array(array("area","=",$value)),"or");
+					}
+				}
+				$dsFilter[]=$PuredatasetStore->filters;
+				$PuredatasetStore->filters=array();			
+			}
+			if($key=="element")$dsFilter[]=array("element","=",$value);
+			if($key=="satellite")$dsFilter[]=array("satellite","=",$value);	
+			if($key=="station")$dsFilter[]=array("station","=",$value);	
+			if($key=="start")$start=$value;
+			if($key=="limit")$limit=$value;
+			if($key=="sort")$sort=$value;
+			if($key=="dir")$dir=$value;
+			if($key=="keywords"){
+				foreach($value as $keyword){
+					$PuredatasetStore->filterBy(array(array("dsname","like","%%".$keyword."%%")));
+					$PuredatasetStore->filterBy(array(array("area","like","%%".$keyword."%%")),"or");
+					$PuredatasetStore->filterBy(array(array("element","like","%%".$keyword."%%")),"or");
+					$PuredatasetStore->filterBy(array(array("equip","like","%%".$keyword."%%")),"or");
+					$PuredatasetStore->filterBy(array(array("equip_alias","like","%%".$keyword."%%")),"or");
+					$PuredatasetStore->filterBy(array(array("satellite","like","%%".$keyword."%%")),"or");
+					$PuredatasetStore->filterBy(array(array("satellite_group","like","%%".$keyword."%%")),"or");
+					$PuredatasetStore->filterBy(array(array("satellite_model","like","%%".$keyword."%%")),"or");
+					$PuredatasetStore->filterBy(array(array("satellite_name","like","%%".$keyword."%%")),"or");
+					$PuredatasetStore->filterBy(array(array("station","like","%%".$keyword."%%")),"or");
+					$PuredatasetStore->filterBy(array(array("station_code","like","%%".$keyword."%%")),"or");
+					$PuredatasetStore->filterBy(array(array("station_name","like","%%".$keyword."%%")),"or");
+					$PuredatasetStore->filterBy(array(array("subject","like","%%".$keyword."%%")),"or");
+					$PuredatasetStore->filterBy(array(array("institution","like","%%".$keyword."%%")),"or");
+					$dsFilter[]=$PuredatasetStore->filters;
+					$PuredatasetStore->filters=array();			
+				}			
+			}		
+			if($key=="subject"){
+				$SubStore=$this->framework->getModel("Subject")->store();
+				$leaf=$SubStore->getLeaf($value);
+				foreach($leaf['id'] as $index=>$value){
+					if($index==0){
+						$PuredatasetStore->filterBy(array(array("subject_id","=",$value)));
+					}else{
+						$PuredatasetStore->filterBy(array(array("subject_id","=",$value)),"or");
+					}
+				}
+				$dsFilter[]=$PuredatasetStore->filters;
+				$PuredatasetStore->filters=array();			
+			}
+			if($key=="dataset")$dsFilter[]=array("dataset_id","=",$value);				
+		}	
+		$ids=$PuredataStore->collect("dataset_id",$dataFilter);
+		$dsFilter[]=array("dataset_id","in",$ids);
+		$PuredatasetStore->sortBy($sort,$dir);
+		$this->records=$PuredatasetStore->filter($dsFilter,$start,$limit);	
+		$this->sql=$this->sql->lastClause;
+		$this->count=$PuredatasetStore->getTotalCount($dsFilter);
+	}
+}
+?>
