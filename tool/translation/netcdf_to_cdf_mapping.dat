@@ -1,0 +1,17 @@
+# This is a mapping file that defines the relationship between netCDF and CDF.
+# Each line that doesn't start with # describes the mapping information.  
+# You can add, delete, or modify the mapping information by adding a line, 
+# removing a line, or modifying a line, respectively.
+#
+#netCDF            CDF                Comment
+#----              ---                -------
+history            Revise_History     // History of revision
+_FillValue         FILLVAL            // Fill value 
+
+# The asterisk (*) is a placeholder indicator and its corresponding mapping
+# attribute is created in the output file.  The following example creates
+# 2 attributes (P1 and P2), if uncommented.  The value
+# of P1 and P2 will be "Placeholder 1" and "Placeholder 2", respectively.
+#
+#   *              P1                     // Placeholder 1
+#   *              P2                     // Placeholder 2

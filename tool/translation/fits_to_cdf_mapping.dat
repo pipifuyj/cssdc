@@ -1,0 +1,48 @@
+# This is a mapping file that defines the relationship between FITS and CDF.
+# Each line that doesn't start with # describes the mapping information.
+# You can add, delete, or modify the mapping information by adding a line,
+# removing a line, or modifying a line, respectively.
+#
+#FITS    CDF                Comment
+#----    ---                -------
+EXTNAME  HDU_Extension_Name // HDU extension name
+DATE     File_Creation_Date // File createion date
+DATE-OBS Observation_Date   // Observation date
+DATE_OBS Observation_Date_Time  // Observation date & time (SOHO/FITS convetion)
+TIME-OBS Observation_Time   // Observation time
+OBSERVER PI_name            // person/entity that acquired the data
+ORIGIN   PI_affiliation     // Institution/org who created the FITS file
+AUTHOR   Author             // Person who compiled the metadata
+TELESCOP Satellite          // Satellite or telescope
+INSTRUME Instrument         // Instrument
+OBJECT   Object_Observed    // Name of the object observed
+REFERENC Reference          // Reference where the data are published
+DATAMAX  Max_Value          // Max value in the array (physical)
+DATAMIN  Min_Value          // Min value in the array (physical)
+EQUINOX  Equinox            // Equinox in years for the celestial coordination
+CTYPE1   ctype1             // Name of the coordinate represented by axis 1
+CTYPE2   ctype2             // Name of the coordinate represented by axis 2
+CTYPE3   ctype3             // Name of the coordinate represented by axis 3
+CRPIX1   crpx1              // Location of a reference point along axis 1 
+CRPIX2   crpx2              // Location of a reference point along axis 2
+CRPIX3   crpx3              // Location of a reference point along axis 3
+CRVAL1   crval1             // Value specified by CTYPE1 at CRPIX1 
+CRVAL2   crval2             // Value specified by CTYPE2 at CRPIX2
+CRVAL3   crval3             // Value specified by CTYPE3 at CRPIX3
+CDELT1   cdelt1             // Partial derivative specified by CTYPE1 at CRPIX1
+CDELT2   cdelt2             // Partial derivative specified by CTYPE2 at CRPIX2
+CDELT3   cdelt3             // Partial derivative specified by CTYPE3 at CRPIX3
+CROTA1   crota1             // Rotation from CTYPE1 to a diff coordinate system
+CROTA2   crota2             // Rotation from CTYPE2 to a diff coordinate system
+CROTA3   crota3             // Rotation from CTYPE3 to a diff coordinate system
+CUNIT1   cunit1             // Unit for CTYPE1 - not FITS standard
+CUNIT2   cunit2             // Unit for CTYPE2 - not FITS standard
+CUNIT3   cunit3             // Unit for CTYPE3 - not FITS standard
+
+# The asterisk (*) is a placeholder indicator and its corresponding mapping
+# attribute is created in the output file.  The following example creates
+# 2 attributes (P1 and P2), if uncommented.  The value
+# of P1 and P2 will be "Placeholder 1" and "Placeholder 2", resctively.
+#
+#  *    P1                     // Placeholder 1
+#  *    P2                     // Placeholder 2
