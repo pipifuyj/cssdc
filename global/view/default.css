@@ -1,0 +1,105 @@
+#body{
+	margin: 0px auto;
+	width: 900px;
+	font-size: 14px;
+}
+#topheader{
+	background-color: #990000;
+	height: 70px;
+	padding-top: 23px;
+}
+.navitem
+{
+	background-color: #003300;
+	padding: 5px;
+	text-decoration:none;
+	font-weight:bold;
+	text-align:center;
+	color: #fff;
+	width: 169px;
+	margin-top:1px;
+	margin-right:1px;
+	float:left;
+}
+.navitem a {text-decoration: none; color: #fff;}
+.navitem a:hover {text-decoration: underline; color: #fff;}
+#left{
+	float: left;
+	padding: 5px;
+	width: 190px;
+}
+#main{
+	float: left;
+	padding: 5px;
+	width: 690px;
+}
+#Filters{
+	float:left;
+	padding: 5px;
+	width: 680px;
+}
+#PagingToolbar{
+	float: left;
+}
+#Map{
+	float: left;
+	border: 3px outset gold;
+	width: 100%;
+	height: 400px;
+}
+.panel{
+	float: left;
+	margin: 1px;
+	border: 1px solid;
+	width: 100%;
+}
+.panel .title{
+	float: left;
+	width: 100%;
+	background: blue;
+}
+.panel .title label{
+	display: block;
+	float: left;
+}
+.panel .title input{
+	display: block;
+	float: right;
+}
+.panel .main{
+	float: left;
+	width: 100%;
+}
+.panel .main label{
+	display: block;
+	float: left;
+	width: 40px;
+}
+.panel .main input{
+	width: 140px;
+}
+.panel .main ul{
+	padding: 0px;
+	width: 100%;
+	overflow: auto;
+}
+.panel .main li{
+	list-style: none;
+	white-space: nowrap;
+}
+.panel .main li input{
+	width: 20px;
+}
+#Results{
+	float: left;
+	padding: 5px;
+	width: 680px;
+}
+#Results ul{
+	margin: 10px;
+	list-style: circle;
+}
+#Results ul ul{
+	margin: 10px 20px;
+	list-style: square;
+}

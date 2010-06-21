@@ -1,0 +1,19 @@
+#right{
+	float:left;
+	width:239px;
+	overflow:hidden;
+}
+#right .imgcontainer{width:240px; height:auto; float:left; text-align:center; clear:both;}
+#right .imgcontainer img{width:220px}
+.subttl2301 {width:239px; height:27px; text-align:left; line-height:27px; float:left; background-image:url(/images/hp_09.gif); background-position:center; background-repeat:repeat-x; color:#000000; vertical-align:middle; font-weight:bold; clear:both}
+.subttl2301a {width:238px; height:27px; text-align:left; line-height:27px; float:left; background-image:url(/images/hp_09.gif); background-position:center; background-repeat:repeat-x; color:#000000; vertical-align:middle; font-weight:bold; clear:both}
+.sobg{
+	width:239px;
+	height:325px;
+	background:url(/images/picbg.gif) 0 0 no-repeat;
+	clear:both;
+}
+.gege1 {height:14px; width:150px; float:left; clear:both; overflow:hidden}
+.picall {width:224px; height:100px; float:left; padding-left:5px; width:230px!important;text-align:center;}
+.pictxtall {width:224px; height:auto; float:left; padding-left:5px; width:230px!important;text-align:center;}
+.gege2 {height:22px; width:150px; float:left; clear:both}

@@ -1,0 +1,86 @@
+.panel{
+	width:264px;
+	text-align:center;
+}
+.panel .title{
+	width:264px;
+	height:33px;
+}
+.panel .line{
+	float:left;
+	margin:5px 0px 5px 11px;
+	width:242px;
+	height:5px;
+	float:left;
+	background:url(/images/line.gif) repeat-x; 
+	display:inline;
+	overflow:hidden
+}
+.panel .input{
+	border:#333333 1px solid;
+	width:120px;
+	background:#FFFFFF;
+}
+.panel .button{
+	margin: 5px 0px;
+	border: #7b9ebd 1px solid;
+	padding: 2px 2px 0px 2px;
+	width: 50px!important;
+	font-size: 12px;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#cecfde);
+	color: black;
+}
+#userPanel{
+	background:#d6d8d8;
+}
+#userPanel .input{
+	margin: 5px 0px;
+}
+#userPanel a{
+	display: block;
+	margin: 0px 5px;
+}
+#keywordsPanel .input{
+	width:150px;
+}
+#DatePanel .input{
+	margin:0px 0px 0px 60px;
+}
+#DatePanel .input{
+	margin-left:10px!ie;
+}
+.menu1 {width:264px;height:auto;float:left;background:#f6f6f6;text-align:left;}
+.menu2 {width:244px;height:auto;background:#f6f6f6;text-align:left;margin:0 auto;}
+.submenu{
+	width:256px;
+	display:none;
+	overflow:auto;
+	text-align:left;
+}
+.submenu .icon{
+	width:16px;
+	height:16px;
+}
+.submenu .submenu{
+	width:236px;
+	margin:0 auto;
+}
+.menu4 {width:202px; height:auto; float:left; background:#f6f6f6}
+.menu4 img{width:264px;height:33px}
+.menu5 {float:right;width:256px;text-align:left}
+.menu5 a{
+	display: block;
+	margin: 3px 0px;
+	padding: 0px 0px 0px 16px;
+	background: url(/images/trans_icon.gif) no-repeat;
+	color: #000;
+}
+.menu5 a:hover {background-color:#555577;color: white;}
+.menu5 a:visited {color:#000}
+.leftmenutext a, .leftmenutext a:visited {color: black;}
+.leftmenutext a:hover {background-color:#555577;color: white;}
+.imitateLinkHover{
+	cursor:pointer;
+	color:white;
+	background:#555577;
+}

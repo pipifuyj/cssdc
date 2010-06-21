@@ -1,0 +1,49 @@
+.tpl-title {
+	padding:10px;
+	width:470px;
+	text-align:left;
+	font-weight:bolder
+}
+.tpl-info {
+	padding:0px 0px 0px 15px;
+	width:470px;
+	text-align:left;
+	font-size:12px;
+	word-break:break-all;
+}
+.tpl-data {
+	float:left;
+	padding:15px 15px 0px 15px;
+	width:451px;
+	font-size:12px;
+}
+.tpl-data {
+	font-size:12px;
+}
+.tpl-tool {
+	float:left;
+	padding:10px 20px 10px 10px;
+	width:470px;
+	height:16px;
+	text-align:right
+}
+.tpl-tool a {
+	padding:0px 5px;
+	font-size:12px;
+	font-weight:bold;
+	color:#035b89;
+	text-decoration:none;
+}
+.tpl-tool a:visited {
+	color:#035b89;
+	text-decoration:none;
+}
+.tpl-clear {
+	display:inline;
+	float:left;
+	margin: 0px 0px 0px 7px;
+	width:475px;
+	height:6px;
+	overflow:hidden;
+	background:url(/images/tpl-clear.gif) center repeat-x;
+}

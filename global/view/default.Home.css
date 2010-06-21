@@ -1,0 +1,159 @@
+BODY {
+        margin:0px auto;
+        COLOR:#000;
+        background:url(/images/bg.gif);
+        font-family:Arial,simsun;
+        font-size:12px;
+        text-align:center;
+}
+A {
+        FONT-SIZE: 12px;
+        COLOR:#035b89;
+        TEXT-DECORATION: none;
+}
+A:visited {
+        COLOR:#035b89;
+        TEXT-DECORATION: none;
+}
+A:hover {
+        TEXT-DECORATION: underline; 
+        COLOR:#035b89;
+}
+A:active {
+        COLOR: #035b89;
+        TEXT-DECORATION: underline;
+}
+
+#all {
+        width:100%; 
+        height:auto; 
+        text-align:center; 
+}
+#maindv {
+        clear:both;
+        margin:0px auto;
+        width:994px;
+        background:#f6f6f6;
+}
+#Left {
+        width:264px;
+        float:left;
+        background:#f6f6f6;
+}
+#Right {
+        width:730px;
+        float:right;
+        background:#FFFFFF;
+}
+#Center {
+        float:left;
+        width:491px;
+        overflow:hidden;
+        background:url(/images/centerbg.gif);
+}
+.mapbg {
+	width:491px;
+	height:350px;
+	float:left;
+	background:url(/images/mapbg.gif) center no-repeat;
+	text-align:center;
+	overflow:hidden;
+}
+.map {
+	width:462px;
+	height:326px;
+	float:left;
+}
+.maplft {
+	width:14px;
+	height:14px;
+	float:left;
+	clear:both;
+	overflow:hidden;
+}
+.maptp {
+	width:460px;
+	height:14px;
+	height:14px;
+	overflow:hidden;
+	float:left;
+	clear:both;
+}
+.dotline {
+	width:485px;
+	height:8px;
+	background:url(/images/hp_23.gif); 0 0 repeat-x;
+	overflow:hidden;
+}
+#Map span{
+	display:none;
+}
+.mapinfo{
+	clear:both;
+	text-align:left;
+	float:left;
+	display:inline;
+	margin:5px;
+}
+.mapinfo span{
+	display:inline!important;
+	font-weight:bold;
+}
+.mapimg{
+	text-align:center;
+}
+.mapimg img{
+	max-height:100px;
+}
+.rc{
+        width:461px;
+        padding-left:20px;
+        float:left
+}
+.rc1{
+	width:350px;
+	height:24px;
+	float:left;
+	text-align:left;
+}
+.rc2{
+	width:90px;
+	height:24px;
+	float:right;
+	text-align:left;
+}
+#Result {
+        padding: 0px 0px 0px 10px;
+        width:431px;
+        text-align:left;
+        height:27px;
+        line-height:27px;
+        overflow:hidden;
+        float:left;
+        background:url(/images/hp_27.gif) center repeat-x;
+        color:#000000;
+        vertical-align:middle;
+        font-weight:bold;
+        overflow:hidden
+}
+#Sorts {
+        float:right;
+        width:50px;
+        height:27px;
+        overflow:hidden;
+        background:url(/images/hp_27.gif) top repeat-x;
+        text-align:left;
+        vertical-align:middle;
+}
+#Results{
+	height:auto;
+}
+#PagingToolbar{
+        float:left;
+        width:489px;
+}
+#Footer{
+	width:994px;
+	clear:both;
+	margin:0 auto;
+}

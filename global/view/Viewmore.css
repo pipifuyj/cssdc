@@ -1,0 +1,23 @@
+body {
+	margin:0px auto;
+	background:url(/images/bg.gif);
+	font-family:Arial,simsun;
+	font-size:12px;
+	text-align:center;
+}
+#body{
+	margin: 0px auto;
+	width: 994px;
+	font-size: 14px;
+}
+#main{
+	float: left;
+	padding: 5px;
+	width: 99%;
+	background: white;
+}
+p{
+	padding:5px 20px;
+	line-height:20px;
+	text-align:left;
+}
