@@ -7,6 +7,7 @@
 		<script src="global/ext-3.2.1/ext-all.js"></script>
 		<script src="http://www.google.com/jsapi?key=ABQIAAAA2hBy59OdKe0nHApjRsj0SRTaX_gdZYQO0dBoUqgngpfZrzSB3xT3BR0pJAaEZ_ZKFO7BlUUiGjNuMQ"></script>
 		<script src="global/view/Gearth.js"></script>
+		<script src="global/view/extensions-0.2.1.js"></script>
 		<style>
 @import url("global/ext-3.2.1/resources/css/ext-all.css");
 @import url("global/view/Viewmore.css");
