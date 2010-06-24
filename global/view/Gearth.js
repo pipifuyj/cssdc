@@ -1,8 +1,6 @@
-var ge;
-var gex;
-var max;
-var min;
+var ge,gex,max,min;
 google.load('earth','1');
+/*
 addPolygon=function(record){
 	var lat = parseFloat(record.get('lat'));
 	var lon = parseFloat(record.get('long'));
@@ -61,54 +59,73 @@ addGexPoint=function(record){
 		style:{
 			icon:{
 				stockIcon: 'paddle/wht-blank',
-				color: gex.util.blendColors('green', 'red', (val-min)/(max-min))
+				color: gex.util.blendColors('blue', 'red', (val-min)/(max-min))
 			}
 		}
 	});
 }
+*/
 addGexPolygon=function(record){
 	var lat = parseFloat(record.get('lat'));
 	var lon = parseFloat(record.get('long'));
 	var alt = parseFloat(record.get('alt'));
 	var val = parseFloat(record.get('value'));
-	var col = record.get('color');
 	var step = 5;
-	var placemark = gex.dom.addPlacemark({
-		name:"",
-		description:"大气密度分布:<br>经度:"+lat+"<br>纬度:"+lon+"<br>高度:"+alt+"<br>大气密度:"+val,
-		point:[lat,lon],
+	var desp = "经度:"+lon+"纬度:"+lat+"海拔高度:"+alt+"大气密度:"+val; 
+	//alert(desp);
+
+	var mid =  min+(max-min)/3; 
+	if(val < mid) var mycolor=gex.util.blendColors('aqua', 'yellow', (val-min)/(mid-min));
+	else  var mycolor=gex.util.blendColors('yellow', 'red', (val-mid)/(max-mid));
+
+	var lon1,lon2,lat1,lat2;
+/*
+	if(lon==180) {lon1=lon-step/2;lon2=lon+step/2-360;}
+	else if(lon==-180) {lon1=lon-step/2+360;lon2=lon+step/2;}
+	else {lon1=lon-step/2;lon2=lon+step/2;}
+	if(lat==90) {lat1=lat-step/2;lat2=lat;}
+	else if(lat=-90) {lat1=lat; lat2=lat+step/2;}
+	else {lat1=lat-step/2;lat2=lat+step/2;}
+*/
+	lon1=lon-step/2;
+	lon2=lon+step/2;
+	lat1=lat-step/2;
+	lat2=lat+step/2;
+	gex.dom.addPlacemark({
+		name:"大气密度分布",
+		description:desp,
 		polygon: [
-			[lat-step/2,lon-step/2],
-			[lat-step/2,lon+step/2],
-			[lat+step/2,lon+step/2],
-			[lat+step/2,lon-step/2]
+			[lat1,lon1],
+			[lat1,lon2],
+			[lat2,lon2],
+			[lat2,lon1]
 		],
 		style: {
 			line: { width: 0, color: '#ff0' },
-			poly: { color: gex.util.blendColors('green', 'red', (val-min)/(max-min)), opacity: 0.35 }
-		},
-		icon:{
-			stockIcon: 'paddle/wht-blank',
-			color: gex.util.blendColors('green', 'red', (val-min)/(max-min))
+			poly: { color: mycolor, opacity: 1} 
 		}
 	});
 }
 Ext.app.earthStore=new Ext.data.XmlStore({
-	proxy: new Ext.data.HttpProxy({url: 'test.xml'}),
+	proxy: new Ext.data.HttpProxy({url: 'test7.xml'}),
 	record: 'result',
 	id: 'id',
-	fields:[{name:'id',type:'int'},{name:'lat',type:'double'},{name:'long',type:'double'},{name:'alt',type:'double'},{name:'color',type:'string'},{name:'value',type:'double'}],
+	fields:[
+		{name:'id',type:'int'},
+		{name:'lat',type:'float'},
+		{name:'long',type:'float'},
+		{name:'alt',type:'float'},
+		{name:'color',type:'string'},
+		{name:'value',type:'float'}
+	],
 	totalProperty: 'count',
 	listeners: {
 		load: function(store,records,options){
-			//var features = ge.getFeatures();
-			//while (features.getFirstChild()) features.removeChild(features.getFirstChild());
 			store.sort('value', 'DESC');
-			max=store.getAt(0).get('value');
-			min=store.getAt(store.getTotalCount()-1).get('value');
+			max=parseFloat(store.getAt(0).get('value'));
+			min=parseFloat(store.getAt(store.getTotalCount()-1).get('value'));
 			gex.dom.clearFeatures();
 			Ext.each(records,addGexPolygon);
-			//Ext.each(records,addGexPoint);
 	    }
 	}
 });
@@ -128,3 +145,4 @@ Ext.onReady(function(){
 		e.stopEvent();
 	});
 });
+
