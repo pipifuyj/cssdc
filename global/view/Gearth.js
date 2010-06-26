@@ -1,5 +1,9 @@
-var ge,max,min;
-
+var ge,max,min,pallete,para={};
+getColor=function(val){
+	var h=Math.round((val-min)*255/(max-min));
+	var color=new HSV(h,100,100);
+	return 'FF'+color.toHEX();
+}
 google.load('earth','1');
 addMark=function(record){
 	var lat = parseFloat(record.get('lat'));
@@ -8,11 +12,6 @@ addMark=function(record){
 	var val = parseFloat(record.get('value'));
 	var desp = "经度:"+lon+"<br>纬度:"+lat+"<br>海拔高度:"+alt+"<br>大气密度:"+val; 
 	var step = 5.0;
-
-	var mid =  min+(max-min)/3; 
-	if(val < mid) var mycolor=gex.util.blendColors('aqua', 'yellow', (val-min)/(mid-min));
-	else  var mycolor=gex.util.blendColors('yellow', 'red', (val-mid)/(max-mid));
-	
 	var lat1,lat2,lon1,lon2;
 	lat1=lat-step/2;
 	lat2=lat+step/2;
@@ -20,7 +19,6 @@ addMark=function(record){
 	lon2=lon+step/2;
 	if(lat==180.0) lat2=360-lat2;
 	if(lat==-180.0) lat1=360+lat1;
-
 	var mark=ge.createPlacemark('');
 	var polygon = ge.createPolygon('');
 	mark.setGeometry(polygon);
@@ -33,31 +31,55 @@ addMark=function(record){
 	coords.pushLatLngAlt(lat2, lon1, alt);
 	mark.setName("大气密度分布");
 	mark.setDescription(desp);
-
 	if (!mark.getStyleSelector()) {
 		mark.setStyleSelector(ge.createStyle(''));
 	}
-	mark.getStyleSelector().getPolyStyle().getColor().set(mycolor);
+	mark.getStyleSelector().getPolyStyle().getColor().set(getColor(val));
 	mark.getStyleSelector().getLineStyle().setWidth(0);
 	ge.getFeatures().appendChild(mark);
 }
+addPallete=function(){
+	pallete.update();
+	var color,h=0,s=100,v=100,e;
+	e=document.createElement('div');
+	e.style.width='10px';
+	e.innerHTML=max;
+	pallete.appendChild(e);
+	for(var h=0;h<256;h++){
+		color=new HSV(h,s,v);
+		e=document.createElement('div');
+		e.title='HSV:'+color;
+		e.style.float='left';
+		e.style.width='10px';
+		e.style.height='1.2px';
+		e.style.background='#'+color.toHEX();
+		pallete.appendChild(e);
+	}
+	e=document.createElement('div');
+	e.style.width='10px';
+	e.innerHTML=min;
+	pallete.appendChild(e);
+}
 Ext.app.earthStore=new Ext.data.XmlStore({
-	proxy: new Ext.data.HttpProxy({url: 'test7.xml'}),
+	proxy: new Ext.data.HttpProxy({url: '?Ssdg=XML'}),
 	record: 'result',
 	id: 'id',
 	fields:[{name:'id',type:'int'},{name:'lat',type:'double'},{name:'long',type:'double'},{name:'alt',type:'double'},{name:'value',type:'double'}],
 	totalProperty: 'count',
 	listeners: {
 		load: function(store,records,options){
-			gex.dom.clearFeatures();
+			var features = ge.getFeatures();
+			while (features.getFirstChild()) features.removeChild(features.getFirstChild());
 			store.sort('value', 'DESC');
 			max=parseFloat(store.getAt(0).get('value'));
 			min=parseFloat(store.getAt(store.getTotalCount()-1).get('value'));
+			addPallete();
 			Ext.each(records,addMark);
 	    }
 	}
 });
 Ext.onReady(function(){
+	pallete=Ext.get("colors");
 	google.earth.createInstance('map3d',function(instance){
 		ge=instance;
 		ge.getWindow().setVisibility(true);
@@ -65,11 +87,13 @@ Ext.onReady(function(){
 		ge.getLayerRoot().enableLayerById(ge.LAYER_BORDERS, true);
 		ge.getLayerRoot().enableLayerById(ge.LAYER_ROADS, true);
 		ge.getLayerRoot().enableLayerById(ge.LAYER_TERRAIN, false);
-		gex = new GEarthExtensions(instance);
 	},function(code){
 	});
+	var form=new Ext.form.BasicForm("params");
 	Ext.EventManager.on("submit","click",function(e,t,o){
-		Ext.app.earthStore.load();
+		Ext.app.earthStore.load({
+			params:form.getValues()
+		});
 		e.stopEvent();
 	});
 });

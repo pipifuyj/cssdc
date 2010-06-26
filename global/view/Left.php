@@ -64,17 +64,11 @@ Ext.onReady(function(){
 <style>@import url('/global/view/Left.css');</style>
 <div id="userPanel" class="panel">
 	<img src="images/hp_07.gif" class='title'>
-<!--	<form action="" method="post">
-	Username&nbsp;<input type="text" class="input"><br>
-	Password&nbsp;<input type="password" class="input"><br>
-	<input type="submit" value="Login" class="button"/>
-	</form>--->
-	<div class="line"></div>
 	<div>
-		<?php echo '<a href="http://auth.csdb.cn/login?service='.urlencode("http://www.cssdc.com/?default=Index").'" target="_self">Login</a>';?>
+		<a href="http://auth.csdb.cn/login?service=http%3A%2F%2Fwww.cssdc.com%2F%3Fdefault%3DIndex" target="_self">Login</a>
 		<a href="http://auth.csdb.cn/reg01.jsp" target="_blank">Registration</a>
-		<a href="#" target="_blank">Forgot your password ?</a> 
 	</div>
+	<div class="line"></div>
 </div>
 <div id="keywordsPanel" class="panel">
 	<img src="images/hp_18.gif" class='title'>

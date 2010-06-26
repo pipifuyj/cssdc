@@ -21,20 +21,7 @@
 		<!--write down your content here-->
 		<p><font color="#0066FF"> June 18, 2010 </font> </p>
 		<p>The SSDG (Space Science Data Grid) system is in the phase of rehearsal and testing. Welcome to visit our data grid system, your support is the driving force of our development!</p> 
-		<br>
-		<br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+		<!--stop writing-->
 		</div>
 		<div id="Footer"><img src="images/Footer.jpg" /></div>
 	</div></body>

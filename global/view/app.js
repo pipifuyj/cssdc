@@ -60,7 +60,7 @@ Ext.app.Downloads=function(view,index,node,e){
 			var x=new ActiveXObject("DataGridPlug_zky.DownloadDataGrid");
 			x.download(file.join("\r\n"));
 		}catch(e){
-			Ext.Msg.alert("Alert","If your browser support ActiveX,do as follows:First, Make our site as a trust url in your browser.Second,please install <a href='tool/DataDownloadClientInstall.rar'>Download Plugin</a>.");
+			Ext.Msg.alert("Alert","If your browser support ActiveX, Please read <a href='?Help#Plugin'>Help</a>.");
 		}
 	}
 }

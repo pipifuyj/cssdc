@@ -6,8 +6,8 @@
 		<script src="global/ext-3.2.1/adapter/ext/ext-base.js"></script>
 		<script src="global/ext-3.2.1/ext-all.js"></script>
 		<script src="http://www.google.com/jsapi?key=ABQIAAAA2hBy59OdKe0nHApjRsj0SRTaX_gdZYQO0dBoUqgngpfZrzSB3xT3BR0pJAaEZ_ZKFO7BlUUiGjNuMQ"></script>
+		<script src="global/javascript/Color.js"></script>
 		<script src="global/view/Gearth.js"></script>
-		<script src="global/view/extensions-0.2.1.js"></script>
 		<style>
 @import url("global/ext-3.2.1/resources/css/ext-all.css");
 @import url("global/view/Viewmore.css");
@@ -33,6 +33,12 @@ label{
 	height:300px;
 	width:400px;
 }
+#colors{
+	float:left;
+	margin:20px;
+	height:300px;
+	width:10px;
+}
 		</style>
 	</head>
 	<body><div id="body">
@@ -41,53 +47,54 @@ label{
 		<!--write down your content here-->
 		<p><strong><font color="#FF0000">NRLMSISE-00 Model 2001 </font></strong></p>
 		<p><strong><font color="#0066FF">Instant Run</font></strong></p>
-<div id="form"><form action="#" method="post">
+<div id="form"><form id="params" action="#" method="post">
 <fieldset>
 	<legend>Select  Date (1961/03 - 2009/12) and Time:</legend>
-	<label>Year</label><input type="text" class="input"> 
+	<label>Year</label><input type="text" class="input" name="year"> 
 	<br>
-	<label>Month</label><input type="text" class="input">
+	<label>Month</label><input type="text" class="input" name="month">
 	<br>
-	<label>Day</label><input type="text" class="input">
+	<label>Day</label><input type="text" class="input" name="day">
 	<br>
 	<label>Time Type</label>
-	<select name="Time Type">
-		<option>Universal</option>
-		<option>Local</option>
+	<select name="timetype">
+		<option value="Universal">Universal</option>
+		<option value="Local">Local</option>
 	</select>
 </fieldset>
 <fieldset>
 	<legend>Select  Coordinates:</legend>
 	<label>Coordinate Type</label>
-	<select name="Coordinate Type">
-		<option>Geographic</option>
-		<option>Geomagnetic</option>
+	<select name="coordinate">
+		<option value="Geographic">Geographic</option>
+		<option value="Geomagnetic">Geomagnetic</option>
 	</select>
 </fieldset>
 <fieldset>
 	<legend>Parameters</legend>
-	<label>Height</label><input type="text" class="input">
+	<label>Height</label><input type="text" class="input" name="height">
 </fieldset>
 <fieldset>
 	<legend>SelectCalculated  MSIS Model Parameters:</legend>
 	<label>Data Type</label>
-	<select name="data type">
-		<option>Atomic Oxygen (O), cm-3</option>
-		<option>Nitrogen (N2), cm-3</option>
-		<option>Oxygen O2, cm-3</option>
-		<option>Total Mass Density, g/cm-3</option>
-		<option>Neutral Temperature, K</option>
-		<option>Exospheric Temperature, K</option>
-		<option>Helium (He), cm-3</option>
-		<option>Argon (Ar), cm-3</option>
-		<option>Hydrogen (H), cm-3</option>
-		<option>Nitrogen (N), cm-3</option>
+	<select name="data">
+		<option value="O">Atomic Oxygen (O), cm-3</option>
+		<option value="N2">Nitrogen (N2), cm-3</option>
+		<option value="O2">Oxygen O2, cm-3</option>
+		<option value="TMD">Total Mass Density, g/cm-3</option>
+		<option value="NT">Neutral Temperature, K</option>
+		<option value="ET">Exospheric Temperature, K</option>
+		<option value="HE">Helium (He), cm-3</option>
+		<option value="AR">Argon (Ar), cm-3</option>
+		<option value="H">Hydrogen (H), cm-3</option>
+		<option value="N">Nitrogen (N), cm-3</option>
 	</select>
 </fieldset>
 <input id="submit" type="submit" value="Submit" class="button"/>
 <input id="submit2" type="submit" value="Clear" class="button"/>
 </form></div>
 <div id="map3d"></div>
+<div id="colors"></div>
 <br clear="both" />
 		<p><strong><font color="#0066FF">About NRLMSISE-00 Model  2001</font></strong></p>
 		<p>The atmosphere can roughly be characterized as the region from sea level to  about 1000 km altitude around the globe, where neutral gases can be detected.  Below 50 km the atmosphere can be assumed to be homogeneously mixed and can be  treated as a perfect gas. Above 80 km the hydrostatic equilibrium gradually  breaks down as diffusion and vertical transport become important. The major  species in the upper atmosphere are N2, O, O2, H, He. Temperature-oriented  nomenclature differentiates the strata of the atmosphere as follows: the  troposphere, from sea level up to about 10 km, where the temperature decreases;  the stratosphere, from 10 km up to about 45 km, where the temperature  increases; the mesosphere, from 45 km up to about 95 km, where the temperature  decreases again; the thermosphere, from 95 km to about 400 km, where the  temperature increases again; and the exosphere, above about 400 km, where the  temperature is constant. <br />
