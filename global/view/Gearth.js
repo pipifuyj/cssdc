@@ -10,7 +10,7 @@ addMark=function(record){
 	var lon = parseFloat(record.get('long'));
 	var alt = parseFloat(record.get('alt'));
 	var val = parseFloat(record.get('value'));
-	var desp = "Longitude:"+lon+"<br>Latitude:"+lat+"<br>Altitude:"+alt+"<br>"+form.getValues().data+":"+Number(val).toExponential(2); 
+	var desp = "Longitude:"+lon+"°<br>Latitude:"+lat+"°<br>Altitude:"+alt+"KM<br>"+form.getValues().data+":"+Number(val).toExponential(2); 
 	var step = 5.0;
 	var lat1,lat2,lon1,lon2;
 	lat1=lat-step/2;
