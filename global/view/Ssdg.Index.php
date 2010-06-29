@@ -35,7 +35,7 @@ label{
 }
 #colors{
 	float:left;
-	margin:20px;
+	margin:5px;
 	height:300px;
 	width:10px;
 }

@@ -51,7 +51,7 @@ addPallete=function(){
 		e.title='HSV:'+color;
 		e.style.float='left';
 		e.style.width='10px';
-		e.style.height='1.2px';
+		e.style.height='0.8px';
 		e.style.background='#'+color.toHEX();
 		pallete.appendChild(e);
 	}
