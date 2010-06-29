@@ -1,4 +1,4 @@
-var ge,max,min,pallete,para={};
+var ge,max,min,pallete,para={},form;
 getColor=function(val){
 	var h=Math.round((val-min)*255/(max-min));
 	var color=new HSV(h,100,100);
@@ -10,7 +10,7 @@ addMark=function(record){
 	var lon = parseFloat(record.get('long'));
 	var alt = parseFloat(record.get('alt'));
 	var val = parseFloat(record.get('value'));
-	var desp = "经度:"+lon+"<br>纬度:"+lat+"<br>海拔高度:"+alt+"<br>大气密度:"+val; 
+	var desp = "Longitude:"+lon+"<br>Latitude:"+lat+"<br>Altitude:"+alt+"<br>"+form.getValues().data+":"+Number(val).toExponential(2); 
 	var step = 5.0;
 	var lat1,lat2,lon1,lon2;
 	lat1=lat-step/2;
@@ -29,7 +29,7 @@ addMark=function(record){
 	coords.pushLatLngAlt(lat1, lon2, alt);
 	coords.pushLatLngAlt(lat2, lon2, alt);
 	coords.pushLatLngAlt(lat2, lon1, alt);
-	mark.setName("大气密度分布");
+	mark.setName("Global "+form.getValues().data+" Distribution");
 	mark.setDescription(desp);
 	if (!mark.getStyleSelector()) {
 		mark.setStyleSelector(ge.createStyle(''));
@@ -43,7 +43,7 @@ addPallete=function(){
 	var color,h=0,s=100,v=100,e;
 	e=document.createElement('div');
 	e.style.width='10px';
-	e.innerHTML=max;
+	e.innerHTML="Max:"+Number(max).toExponential(2);
 	pallete.appendChild(e);
 	for(var h=0;h<256;h++){
 		color=new HSV(h,s,v);
@@ -57,7 +57,7 @@ addPallete=function(){
 	}
 	e=document.createElement('div');
 	e.style.width='10px';
-	e.innerHTML=min;
+	e.innerHTML="Min:"+Number(min).toExponential(2);
 	pallete.appendChild(e);
 }
 Ext.app.earthStore=new Ext.data.XmlStore({
@@ -89,7 +89,7 @@ Ext.onReady(function(){
 		ge.getLayerRoot().enableLayerById(ge.LAYER_TERRAIN, false);
 	},function(code){
 	});
-	var form=new Ext.form.BasicForm("params");
+	form=new Ext.form.BasicForm("params");
 	Ext.EventManager.on("submit","click",function(e,t,o){
 		Ext.app.earthStore.load({
 			params:form.getValues()

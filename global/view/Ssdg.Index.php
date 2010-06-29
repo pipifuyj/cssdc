@@ -49,12 +49,12 @@ label{
 		<p><strong><font color="#0066FF">Instant Run</font></strong></p>
 <div id="form"><form id="params" action="#" method="post">
 <fieldset>
-	<legend>Select  Date (1961/03 - 2009/12) and Time:</legend>
-	<label>Year</label><input type="text" class="input" name="year"> 
+	<legend>Select  Date (1961/03/01 - 2009/12/31) and Time:</legend>
+	<label>Year(eg:2000)</label><input type="text" class="input" name="year"> 
 	<br>
-	<label>Month</label><input type="text" class="input" name="month">
+	<label>Month(eg:01)</label><input type="text" class="input" name="month">
 	<br>
-	<label>Day</label><input type="text" class="input" name="day">
+	<label>Day(eg:01)</label><input type="text" class="input" name="day">
 	<br>
 	<label>Time Type</label>
 	<select name="timetype">
