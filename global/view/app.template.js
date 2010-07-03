@@ -13,13 +13,27 @@ Ext.app.xtemplate=new Ext.XTemplate('<tpl for=".">',
 "</div>",
 "<div class='tpl-data Items'></div>",
 "<div class='tpl-tool Item'>",
+'<tpl if="this.match(area)">',
+"<a href='{addr}{id}' target='_self'>More</a>",
+"</tpl>",
+'<tpl if="!this.match(area)">',
 "<a href='?Viewmore&dataset={id}&starttime={starttime}&endtime={endtime}' target='_blank'>More</a>",
+"</tpl>",
 "<a click='Toggle' href='javascript:void(0)'>Toggle</a>",
 "<a click='Previews' href='javascript:void(0)'>Previews</a>",
 "<a click='Downloads' href='javascript:void(0)'>Downloads</a>",
 "</div>",
 "<div class='tpl-clear'></div>",
-'</tpl>');
+'</tpl>',
+{
+	compiled: true,
+	match:function(str){
+		if(str.indexOf("Moon")!=-1) return true;
+		if(str.indexOf("Mars")!=-1) return true;
+		return false;
+	}
+}
+);
 Ext.app.template={};
 Ext.app.template.cdf=new Ext.Template(
 "<table width='100%' border='0' cellpadding='0' cellspacing='0'><tr data={id}>",

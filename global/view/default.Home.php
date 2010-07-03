@@ -8,7 +8,7 @@
 <script src="global/view/app.template.js"></script>
 <script src="global/view/app.js"></script>
 <script src="global/view/default.js"></script>
-<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA2hBy59OdKe0nHApjRsj0SRTaX_gdZYQO0dBoUqgngpfZrzSB3xT3BR0pJAaEZ_ZKFO7BlUUiGjNuMQ" type="text/javascript"></script> 
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA2hBy59OdKe0nHApjRsj0SRQZ1gBj0Uz7zCLWNIOHLzSuXaZBlxRwQOu3E8PccL--IbNFYppaY7o64Q" type="text/javascript"></script> 
 <script src="global/view/Gmap.js"></script>  
 <style>
 @import url("global/ext-3.2.1/resources/css/ext-all.css");

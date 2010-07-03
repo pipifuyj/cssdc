@@ -26,6 +26,7 @@ class DatasetView extends View{
 			$xml.="<institution>";
 			foreach($record->MultiNode as $Node) $xml.=$Node->institution." ";
 			$xml.="</institution>";
+			$xml.="<tablename>".$record->tablename."</tablename>";
 			$xml.="</dataset>";
 		}
 		$xml.="</datasets>";	

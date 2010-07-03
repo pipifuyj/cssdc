@@ -117,7 +117,7 @@ Ext.app.store=new Ext.data.XmlStore({
 	proxy: new Ext.data.HttpProxy({url: '?Dataset'}),
 	record: 'dataset',
 	id: 'id',
-	fields: ['id','dsname','addr','meta','doc','format','area','element','equip','platform','subject','institution'],
+	fields: ['id','dsname','addr','meta','doc','format','area','element','equip','platform','subject','institution','tablename'],
 	totalProperty: 'count',
 	lastParams: {'keywords[]':[]},
 	listeners: {
@@ -158,7 +158,7 @@ Ext.app.data=new Ext.data.XmlStore({
 	listeners: {
 		beforeload: function(store,options){
 			store.LastOptions=Ext.applyIf(options,store.LastOptions);
-			Ext.apply(options.params,{'dataset':options.dataset.id});
+			Ext.apply(options.params,{'dataset':options.dataset.get('tablename')});
 			store.lastParams=Ext.applyIf(options.params,store.lastParams);
 			if(options.dataset.get('starttime'))options.params.starttime=options.dataset.get('starttime');
 			else delete store.lastParams.starttime;

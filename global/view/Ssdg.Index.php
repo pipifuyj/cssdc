@@ -5,7 +5,7 @@
 		<title><?php echo $this->title;?></title>
 		<script src="global/ext-3.2.1/adapter/ext/ext-base.js"></script>
 		<script src="global/ext-3.2.1/ext-all.js"></script>
-		<script src="http://www.google.com/jsapi?key=ABQIAAAA2hBy59OdKe0nHApjRsj0SRTaX_gdZYQO0dBoUqgngpfZrzSB3xT3BR0pJAaEZ_ZKFO7BlUUiGjNuMQ"></script>
+		<script src="http://www.google.com/jsapi?key=ABQIAAAA2hBy59OdKe0nHApjRsj0SRQZ1gBj0Uz7zCLWNIOHLzSuXaZBlxRwQOu3E8PccL--IbNFYppaY7o64Q"></script>
 		<script src="global/javascript/Color.js"></script>
 		<script src="global/view/Gearth.js"></script>
 		<style>
@@ -72,7 +72,7 @@ label{
 </fieldset>
 <fieldset>
 	<legend>Parameters</legend>
-	<label>Height</label><input type="text" class="input" name="height">
+	<label>Height (m)</label><input type="text" class="input" name="height">
 </fieldset>
 <fieldset>
 	<legend>SelectCalculated  MSIS Model Parameters:</legend>

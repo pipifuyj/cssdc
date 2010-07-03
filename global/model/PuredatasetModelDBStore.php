@@ -19,7 +19,7 @@ class PuredatasetModelDBStore extends ModelDBStore{
 		array("grid_node_dic","grid_node_dic.node_id=dataset_delivery_gridnode_ref.node_id","left","has"=>"MultiNode")
 	);
 	public $Fields=array(
-		array("dataset_id","dataset_name","data_num","dataset_path","metadata_path","doc_path","data_format","protocol","dataserver_ip","user","passwd"),
+		array("dataset_id","dataset_name","data_num","dataset_path","metadata_path","doc_path","data_format","protocol","dataserver_ip","user","passwd","dataset_tab"),
 		array("area_id"),
 		array("area_name"),
 		array("element_id"),
