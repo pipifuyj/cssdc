@@ -122,6 +122,8 @@ Ext.onReady(function(){
 				$intro=$this->areatree['intro'][$index];
 				$id=$this->areatree['id'][$index];
 				$pid=$this->areatree['pid'][$index];
+				$intro=str_replace("\r\n","",$intro);//去掉\r\n回车，撇号防止出现问题
+				$intro=str_replace("'","",$intro);//
 				if($intro)echo "dDataTree1.add('$id','$pid','$title',\"javascript:Ext.app.filter('area','$name')\",'$id','Area_$id','Introduction','$intro');";
 				else echo "dDataTree1.add('$id','$pid','$title',\"javascript:Ext.app.filter('area','$name')\",'$id','','','');";
 				}

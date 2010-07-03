@@ -43,7 +43,7 @@ addPallete=function(){
 	var color,h=0,s=100,v=100,e;
 	e=document.createElement('div');
 	e.style.width='10px';
-	e.innerHTML="Max:"+Number(max).toExponential(2);
+	e.innerHTML=Number(max).toExponential(4);
 	pallete.appendChild(e);
 	for(var h=0;h<256;h++){
 		color=new HSV(h,s,v);
@@ -51,28 +51,35 @@ addPallete=function(){
 		e.title='HSV:'+color;
 		e.style.float='left';
 		e.style.width='10px';
-		e.style.height='0.8px';
+		e.style.height='1.0px';
 		e.style.background='#'+color.toHEX();
 		pallete.appendChild(e);
 	}
 	e=document.createElement('div');
 	e.style.width='10px';
-	e.innerHTML="Min:"+Number(min).toExponential(2);
+	e.innerHTML=Number(min).toExponential(4);
 	pallete.appendChild(e);
 }
 Ext.app.earthStore=new Ext.data.XmlStore({
 	proxy: new Ext.data.HttpProxy({url: '?Ssdg=XML'}),
 	record: 'result',
 	id: 'id',
-	fields:[{name:'id',type:'int'},{name:'lat',type:'double'},{name:'long',type:'double'},{name:'alt',type:'double'},{name:'value',type:'double'}],
+	fields:[{name:'id',type:'int'},{name:'lat',type:'string'},{name:'long',type:'string'},{name:'alt',type:'string'},{name:'value',type:'double'}],
 	totalProperty: 'count',
 	listeners: {
 		load: function(store,records,options){
 			var features = ge.getFeatures();
 			while (features.getFirstChild()) features.removeChild(features.getFirstChild());
-			store.sort('value', 'DESC');
-			max=parseFloat(store.getAt(0).get('value'));
-			min=parseFloat(store.getAt(store.getTotalCount()-1).get('value'));
+			Ext.each(records,function(record,index){
+				curr=parseFloat(record.get('value'));
+				if(index==0){
+					min = curr;
+					max = curr;
+				}else{
+					if(min > curr) min = curr;
+					if(max < curr) max = curr;
+				}
+			});
 			addPallete();
 			Ext.each(records,addMark);
 	    }
