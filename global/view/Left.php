@@ -1,9 +1,13 @@
 <script src="Scripts/tooltips.js"></script>
 <link href="Scripts/dtree/dtree.css" rel="stylesheet" type="text/css" />
 <script src="Scripts/dtree/dtree.js" type="text/javascript"></script>
-<script src="global/view/Ext.Auth.js" type="text/javascript"></script>
 <script>
 Ext.onReady(function(){
+	Ext.user=Ext.util.Cookies.get("user");
+	alert(Ext.user);
+	Ext.userpanel=Ext.get("userstatus");
+	if(Ext.user==null) Ext.userpanel.update('<a href="http://ssdg.cssar.ac.cn:8080/login.jsp" target="_self">Login</a><a href="http://auth.csdb.cn/reg01.jsp" target="_blank">Registration</a>');
+	else Ext.userpanel.update('Welcome, Dear '+Ext.user);
 	Ext.select(".clickmenu").on("click",function(e,t){
 		var element=Ext.get(t).parent().down(".submenu");
 		element.setStyle("display",element.isDisplayed()?"none":"block");
