@@ -65,7 +65,7 @@ Ext.onReady(function(){
 <div id="userPanel" class="panel">
 	<img src="images/hp_07.gif" class='title'>
 	<div>
-		<a href="http://auth.csdb.cn/login?service=http%3A%2F%2Fwww.cssdc.com%2F%3Fdefault%3DIndex" target="_self">Login</a>
+		<a href="http://ssdg.cssar.ac.cn:8080/login.jsp" target="_self">Login</a>
 		<a href="http://auth.csdb.cn/reg01.jsp" target="_blank">Registration</a>
 	</div>
 	<div class="line"></div>

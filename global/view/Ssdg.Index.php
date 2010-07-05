@@ -33,12 +33,6 @@ label{
 	height:300px;
 	width:400px;
 }
-#colors{
-	float:left;
-	margin:5px;
-	height:300px;
-	width:10px;
-}
 		</style>
 	</head>
 	<body><div id="body">
@@ -94,7 +88,7 @@ label{
 <input id="submit2" type="submit" value="Clear" class="button"/>
 </form></div>
 <div id="map3d"></div>
-<div id="colors"></div>
+<div id="colors" styple="float:left;height:300px;width:10px;"></div>
 <br clear="both" />
 		<p><strong><font color="#0066FF">About NRLMSISE-00 Model  2001</font></strong></p>
 		<p>The atmosphere can roughly be characterized as the region from sea level to  about 1000 km altitude around the globe, where neutral gases can be detected.  Below 50 km the atmosphere can be assumed to be homogeneously mixed and can be  treated as a perfect gas. Above 80 km the hydrostatic equilibrium gradually  breaks down as diffusion and vertical transport become important. The major  species in the upper atmosphere are N2, O, O2, H, He. Temperature-oriented  nomenclature differentiates the strata of the atmosphere as follows: the  troposphere, from sea level up to about 10 km, where the temperature decreases;  the stratosphere, from 10 km up to about 45 km, where the temperature  increases; the mesosphere, from 45 km up to about 95 km, where the temperature  decreases again; the thermosphere, from 95 km to about 400 km, where the  temperature increases again; and the exosphere, above about 400 km, where the  temperature is constant. <br />
