@@ -4,7 +4,7 @@
 <script>
 Ext.onReady(function(){
 	Ext.user=Ext.util.Cookies.get("user");
-	Ext.userpanel=Ext.fly("userstatus");
+	Ext.userpanel=Ext.get("userstatus");
 	if(Ext.user==null) Ext.userpanel.update('<a href="http://ssdg.cssar.ac.cn:8080/login.jsp" target="_self">Login</a><a href="http://auth.csdb.cn/reg01.jsp" target="_blank">Registration</a>');
 	else{
 		Ext.userpanel.update('<br/>Welcome, Dear "'+Ext.user+'"!<a href="http://ssdg.cssar.ac.cn:8080/logout.jsp" target="_self">Logout</a><br/>');
