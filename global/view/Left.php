@@ -1,6 +1,7 @@
 <script src="Scripts/tooltips.js"></script>
 <link href="Scripts/dtree/dtree.css" rel="stylesheet" type="text/css" />
 <script src="Scripts/dtree/dtree.js" type="text/javascript"></script>
+<script src="global/view/Ext.Auth.js" type="text/javascript"></script>
 <script>
 Ext.onReady(function(){
 	Ext.select(".clickmenu").on("click",function(e,t){
@@ -64,7 +65,7 @@ Ext.onReady(function(){
 <style>@import url('/global/view/Left.css');</style>
 <div id="userPanel" class="panel">
 	<img src="images/hp_07.gif" class='title'>
-	<div>
+	<div id="userstatus">
 		<a href="http://ssdg.cssar.ac.cn:8080/login.jsp" target="_self">Login</a>
 		<a href="http://auth.csdb.cn/reg01.jsp" target="_blank">Registration</a>
 	</div>
