@@ -49,8 +49,8 @@ addPallete=function(){
 		color=new HSV(h,s,v);
 		e=document.createElement('div');
 		e.title='HSV:'+color;
-		e.style.float='left';
-		e.style.width='10px';
+		//e.style.float='left';
+		e.style.width='5px';
 		e.style.height='1.0px';
 		e.style.background='#'+color.toHEX();
 		pallete.appendChild(e);

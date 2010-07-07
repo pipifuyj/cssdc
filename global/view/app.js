@@ -169,7 +169,7 @@ Ext.app.data=new Ext.data.XmlStore({
 		},
 		load: function(store,records,options){
 			var dom=Ext.app.output.query(".Items")[options.index];
-			var element=Ext.get(dom).update();
+			var element=Ext.get(dom).update("");
 			var addr=options.dataset.get('addr');
 			var format=options.dataset.get('format');
 			var template=Ext.app.template[format]?Ext.app.template[format]:Ext.app.template['img'];

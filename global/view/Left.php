@@ -69,8 +69,8 @@ Ext.onReady(function(){
 <div id="userPanel" class="panel">
 	<img src="images/hp_07.gif" class='title'>
 	<div id="userstatus">
-<!--		<a href="http://ssdg.cssar.ac.cn:8080/login.jsp" target="_self">Login</a>
-		<a href="http://auth.csdb.cn/reg01.jsp" target="_blank">Registration</a>-->
+		<a href="http://ssdg.cssar.ac.cn:8080/login.jsp" target="_self">Login</a>
+		<a href="http://auth.csdb.cn/reg01.jsp" target="_blank">Registration</a>
 	</div>
 	<div class="line"></div>
 </div>
@@ -215,6 +215,13 @@ document.write(dDataTree2);
 </script>
 		<div style="height:8px; width:100px; float:left; overflow:hidden"></div>
 	</div>
+</div>
+<div class="menu4"><img src="images/node.gif"></div>
+<div class="menu5">
+<a href="http://ssdg.cssar.ac.cn/">Space Science Master Node</a>
+<a href="#">Solar Atmosphere Node</a>
+<a href="#">Geomagnetism Node</a>
+<a href="#">Upperatmosphere Node</a>
 </div>
 <div class="menu4"><img src="images/hp_43.gif"></div>
 <div class="menu5">

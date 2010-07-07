@@ -24,7 +24,7 @@
 		<p>If you are Chinese user, you can use our please visit our <a href="http://drs.csdb.cn/index401Action.do?&customId=00053">SSDG </a> forum.</p>
 		<H1><A NAME="Plugin">Plugin</A></H1>
 		<p>To Install Space Science Data Grid Download Plugin, you should do as follows:</p>
-		<p>1,Download the plugin.<br>2,Make the website as a trust url in your IE explorer.<br>3,Install the plugin under the guide of README in the RAR package.</p>
+		<p>1,Download the <a href="tool/downloadplugin.rar">plugin</a>.<br>2,Make the website as a trust url in your IE explorer.<br>3,Install the plugin under the guide of README in the RAR package.</p>
 		<!--stop writing-->
 		</div>
 		<div id="Footer"><img src="images/Footer.jpg" /></div>
