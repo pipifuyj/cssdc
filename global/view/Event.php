@@ -78,7 +78,7 @@ class EventView extends View{
 				$xml.="<filename>".$record->filename."</filename>";
 				$xml.="<starttime>".$record->starttime."</starttime>";
 				$xml.="<endtime>".$record->endtime."</endtime>";
-				$xml.="<path>".$record->filepath."/".$record->filename."</path>";
+				$xml.="<path>".$record->filepath."</path>";
 				$xml.="</file>";
 		}
 		$xml.="</files>";	

@@ -235,24 +235,30 @@ Ext.app.DataPaging=new Ext.PagingToolbar({
 	pageSize: 20,
 	displayInfo: true
 });
+Ext.app.Linker=function(val){
+	return "<a href='"+val+"'>Get</a>";
+}
 Ext.app.DataGrid=new Ext.grid.GridPanel({
 	title: 'Event Relative Data',
 	autoHeight: true,
 	store: Ext.app.DataStore,
+	sm: new Ext.grid.CheckboxSelectionModel(),
 	cm: new Ext.grid.ColumnModel({
-	defaults: {sortable: true},
-	columns: [
-		{header:'Relative Dataset',dataIndex:'record_id'},
-		{header:'Relative File',dataIndex:'filename'},
-		{header:'Start Time',dataIndex:'starttime'},
-		{header:'End Time',dataIndex:'endtime'},
-		{header:'Path',dataIndex:'path'}
-	]}),
+			defaults: {sortable: true},
+			columns: [
+				//new Ext.grid.CheckboxSelectionModel ({singleSelect : false}),
+				{header:'Relative Dataset',dataIndex:'record_id'},
+				{header:'Relative File',dataIndex:'filename'},
+				{header:'Start Time',dataIndex:'starttime'},
+				{header:'End Time',dataIndex:'endtime'},
+				{header:'Download',dataIndex:'path',renderer:Ext.app.Linker}
+		]}),
 	viewConfig: {forceFit:true},
 	bbar: Ext.app.DataPaging,
 	listeners: {
 		rowclick: function(grid,index,e){
 		}
-	},renderTo: 'Data'
+	},
+	renderTo: 'Data'
 });
 })
