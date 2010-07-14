@@ -242,8 +242,8 @@ Ext.app.DataGrid=new Ext.grid.GridPanel({
 	cm: new Ext.grid.ColumnModel({
 	defaults: {sortable: true},
 	columns: [
-		{header:'Data Set',dataIndex:'record_id'},
-		{header:'File Name',dataIndex:'filename'},
+		{header:'Relative Dataset',dataIndex:'record_id'},
+		{header:'Relative File',dataIndex:'filename'},
 		{header:'Start Time',dataIndex:'starttime'},
 		{header:'End Time',dataIndex:'endtime'},
 		{header:'Path',dataIndex:'path'}
