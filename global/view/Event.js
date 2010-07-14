@@ -69,8 +69,8 @@ Ext.app.EventGrid=new Ext.grid.GridPanel({
 	cm: new Ext.grid.ColumnModel({
 	defaults: {sortable: true},
 	columns: [
-		{header:'NASA Start Time',dataIndex:'nasastarttime'},
-		{header:'NASA Max Time',dataIndex:'nasamaxtime'},
+		{header:'Start Time',dataIndex:'nasastarttime'},
+		{header:'Max Time',dataIndex:'nasamaxtime'},
 		{header:'Proton Flux',dataIndex:'flux'},
 		{header:'Associated CME',dataIndex:'assocme'},
 		{header:'Importance',dataIndex:'importance'},

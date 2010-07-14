@@ -40,8 +40,11 @@ public function Search(){
 	if(isset($_REQUEST['sort'])&&isset($_REQUEST['dir'])){
 		$sort=$_REQUEST["sort"];
 		$dir=$_REQUEST["dir"];
-		$EventStore->sortBy($sort,$dir);
+	}else{
+		$sort="nasastart";
+		$dir="DESC";
 	}
+	$EventStore->sortBy($sort,$dir);
    	$this->events=$EventStore->filter($filters,$start,$limit);
 	$this->lastClause=$this->sql->lastClause;
 	$this->count=$EventStore->getTotalCount($filters);
@@ -53,7 +56,7 @@ public function Data(){
 	if(isset($_REQUEST["sort"])&&isset($_REQUEST['dir'])){
 		$sort=$_REQUEST["sort"];
 		$dir=$_REQUEST["dir"];
-	}	
+	}
 	if(isset($_REQUEST["start"]))$begin=$_REQUEST["start"];
 	else $begin=0;
 	if(isset($_REQUEST["limit"]))$limit=$_REQUEST["limit"];
