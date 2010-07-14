@@ -236,13 +236,13 @@ Ext.app.DataPaging=new Ext.PagingToolbar({
 	displayInfo: true
 });
 Ext.app.DataGrid=new Ext.grid.GridPanel({
-	title: 'Data Grid',
+	title: 'Event Relative Data',
 	autoHeight: true,
 	store: Ext.app.DataStore,
 	cm: new Ext.grid.ColumnModel({
 	defaults: {sortable: true},
 	columns: [
-		{header:'#',dataIndex:'record_id'},
+		{header:'Data Set',dataIndex:'record_id'},
 		{header:'File Name',dataIndex:'filename'},
 		{header:'Start Time',dataIndex:'starttime'},
 		{header:'End Time',dataIndex:'endtime'},
