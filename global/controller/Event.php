@@ -48,48 +48,78 @@ public function Search(){
 }
 public function Data(){
 	$sort="record_id";$dir="ASC";
-	$eventType=$_REQUEST["type"];
-	$eventid=$_REQUEST["event"];
+	$eventType=ucwords($_REQUEST["type"]);
+	$eventid=(int)$_REQUEST["event"];
 	if(isset($_REQUEST["sort"])&&isset($_REQUEST['dir'])){
 		$sort=$_REQUEST["sort"];
 		$dir=$_REQUEST["dir"];
 	}	
+	if(isset($_REQUEST["start"]))$begin=$_REQUEST["start"];
+	else $begin=0;
+	if(isset($_REQUEST["limit"]))$limit=$_REQUEST["limit"];
+	else $limit=30;
+
 	$DataStore=$this->framework->getModel("Puredata")->store();
 	$EventStore=$this->framework->getModel($eventType)->store();
 	$RefStore=$this->framework->getModel($eventType."ref")->store();
-	if(isset($_REQUEST["start"]))$start=$_REQUEST["start"];
-	else $start=0;
-	if(isset($_REQUEST["limit"]))$limit=$_REQUEST["limit"];
-	else $limit=30;
-	$currEvent=$EventStore->getById($eventid);
-	$relations=$RefStore->filter(array(array("id","=",$eventid)));	
+
+	$currEvent=$EventStore->filter(array(array("id","=",$eventid)));
+	$currEvent=$currEvent[0];
+	$relations=$RefStore->filter();	
+
 	foreach($relations as $index=>$relation){
 		$currDsId=$relation->dataset;
 		if($relation->reltype==="before"){
-			$currEndTime=$currEvent->starttime;
-			$currStartTime=date("Y-m-d H:i:s",strtotime($currEndTime)-$relation->timemap*3600*24);
+			$start=date("Y-m-d H:i:s",strtotime($currEvent->nasastart)-$relation->starttimemap*60);
+			$end=date("Y-m-d H:i:s",strtotime($start)+$relation->timemap*60);
 			$array=array(
 				array("dataset_id","=",$currDsId),
-				array("starttime",">=",$currStartTime),
-				array("endtime","<=",$currEndTime)
+				array("starttime","<=",$start),
+				array("endtime",">=",$end)
 			);
 			$DataStore->filterBy($array,$index==0?"and":"or");
+			$array=array(
+				array("dataset_id","=",$currDsId),
+				array("starttime",">=",$start),
+				array("endtime","<=",$end)
+			);
+			$DataStore->filterBy($array,"or");
 		}else if($relation->reltype==="with"){
-		}else if($relation->reltype==="after"){
-			$currStartTime=$currEvent->endtime;
-			$currEndTime=date("Y-m-d H:i:s",(strtotime($currEndTime)+$relation->timemap*3600*24));
+			$start=date("Y-m-d H:i:s",strtotime($currEvent->nasastart));
+			$end=date("Y-m-d H:i:s",strtotime($start)+$relation->timemap*60);
 			$array=array(
 				array("dataset_id","=",$currDsId),
-				array("starttime",">=",$currStartTime),
-				array("endtime","<=",$currEndTime)
+				array("starttime","<=",$start),
+				array("endtime",">=",$end)
 			);
 			$DataStore->filterBy($array,$index==0?"and":"or");
+			$array=array(
+				array("dataset_id","=",$currDsId),
+				array("starttime",">=",$start),
+				array("endtime","<=",$end)
+			);
+			$DataStore->filterBy($array,"or");
+		}else if($relation->reltype==="after"){
+			$start=date("Y-m-d H:i:s",strtotime($currEvent->nasastart)+$relation->starttimemap*60);
+			$end=date("Y-m-d H:i:s",strtotime($start)+$relation->timemap*60);
+			$array=array(
+				array("dataset_id","=",$currDsId),
+				array("starttime","<=",$start),
+				array("endtime",">=",$end)
+			);
+			$DataStore->filterBy($array,$index==0?"and":"or");
+			$array=array(
+				array("dataset_id","=",$currDsId),
+				array("starttime",">=",$start),
+				array("endtime","<=",$end)
+			);
+			$DataStore->filterBy($array,"or");
 		}
 	}
 	$filters=$DataStore->filters;
 	$DataStore->filters=array();
 	$DataStore->sortBy($sort,$dir);
-	$this->records=$DataStore->filter($filters,$start,$limit);
+	$this->records=$DataStore->filter($filters,$begin,$limit);
 	$this->sql=$this->sql->lastClause;
 	$this->count=$DataStore->getTotalCount($filters);
 }

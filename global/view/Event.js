@@ -88,7 +88,7 @@ Ext.app.EventGrid=new Ext.grid.GridPanel({
 				event:Ext.app.EventStore.getAt(index).id,
 				limit:20
 			});
-			//Ext.app.DataStore.load();
+			Ext.app.DataStore.load();
 		}
 	},
 	renderTo: 'Events'
@@ -253,7 +253,6 @@ Ext.app.DataGrid=new Ext.grid.GridPanel({
 	listeners: {
 		rowclick: function(grid,index,e){
 		}
-	}
-//	,renderTo: 'Data'
+	},renderTo: 'Data'
 });
 })
