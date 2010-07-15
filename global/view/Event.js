@@ -236,7 +236,7 @@ Ext.app.DataPaging=new Ext.PagingToolbar({
 	displayInfo: true
 });
 Ext.app.Linker=function(val){
-	return "<a href='"+val+"'>Get</a>";
+	return "<a href='"+val+"' target='_blank'>Get</a>";
 }
 Ext.app.DataGrid=new Ext.grid.GridPanel({
 	title: 'Event Relative Data',
