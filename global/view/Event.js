@@ -63,7 +63,7 @@ Ext.app.EventPaging=new Ext.PagingToolbar({
 	displayInfo: true
 });
 Ext.app.EventGrid=new Ext.grid.GridPanel({
-	title: 'Proton Event',
+	title: 'Space Weather Events',
 	autoHeight: true,
 	store: Ext.app.EventStore,
 	cm: new Ext.grid.ColumnModel({
